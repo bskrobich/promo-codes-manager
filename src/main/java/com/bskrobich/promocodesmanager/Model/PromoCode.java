@@ -12,6 +12,7 @@ import java.util.Objects;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class PromoCode {
     @Id
     @Column
