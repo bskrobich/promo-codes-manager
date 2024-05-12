@@ -1,16 +1,17 @@
 package com.bskrobich.promocodesmanager.service;
 
-import com.bskrobich.promocodesmanager.dto.PromoCodeDto;
+import com.bskrobich.promocodesmanager.dto.PromoCodeRequestDto;
+import com.bskrobich.promocodesmanager.dto.PromoCodeResponseDto;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface PromoCodeService {
 
-    PromoCodeDto createPromoCode(PromoCodeDto promoCodeDto);
+    PromoCodeResponseDto createPromoCode(PromoCodeRequestDto promoCodeDto);
 
-    List<PromoCodeDto> getAllPromoCodes();
+    List<PromoCodeResponseDto> getAllPromoCodes();
 
-    Optional<PromoCodeDto> getPromoCodeByCode(String code);
+    PromoCodeResponseDto getPromoCodeByCode(String code);
 
 }

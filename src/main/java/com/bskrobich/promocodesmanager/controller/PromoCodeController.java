@@ -1,6 +1,7 @@
 package com.bskrobich.promocodesmanager.controller;
 
-import com.bskrobich.promocodesmanager.dto.PromoCodeDto;
+import com.bskrobich.promocodesmanager.dto.PromoCodeRequestDto;
+import com.bskrobich.promocodesmanager.dto.PromoCodeResponseDto;
 import com.bskrobich.promocodesmanager.service.PromoCodeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -17,20 +18,18 @@ public class PromoCodeController {
     private final PromoCodeService service;
 
     @PostMapping
-    public ResponseEntity<PromoCodeDto> create(@RequestBody PromoCodeDto promoCodeDto) {
+    public ResponseEntity<PromoCodeResponseDto> create(@RequestBody PromoCodeRequestDto promoCodeDto) {
         return ResponseEntity.ok(service.createPromoCode(promoCodeDto));
     }
 
     @GetMapping
-    public ResponseEntity<List<PromoCodeDto>> getAllPromoCodes() {
+    public ResponseEntity<List<PromoCodeResponseDto>> getAllPromoCodes() {
         return ResponseEntity.ok(service.getAllPromoCodes());
     }
 
     @GetMapping("/{code}")
-    public ResponseEntity<PromoCodeDto> getPromoCodeByCode(@PathVariable String code) {
-        Optional<PromoCodeDto> promoCode = service.getPromoCodeByCode(code);
-        return promoCode.map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity.notFound().build());
+    public ResponseEntity<PromoCodeResponseDto> getPromoCodeByCode(@PathVariable String code) {
+        return ResponseEntity.ok(service.getPromoCodeByCode(code));
 
     }
 

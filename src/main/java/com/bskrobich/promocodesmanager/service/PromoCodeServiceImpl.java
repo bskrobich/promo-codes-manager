@@ -1,14 +1,17 @@
 package com.bskrobich.promocodesmanager.service;
 
-import com.bskrobich.promocodesmanager.dto.PromoCodeDto;
+import com.bskrobich.promocodesmanager.dto.PromoCodeRequestDto;
+import com.bskrobich.promocodesmanager.dto.PromoCodeResponseDto;
 import com.bskrobich.promocodesmanager.mapper.PromoCodeMapper;
 import com.bskrobich.promocodesmanager.model.PromoCode;
 import com.bskrobich.promocodesmanager.repository.PromoCodeRepository;
+import com.bskrobich.promocodesmanager.validator.PromoCodeValidator;
+import jakarta.persistence.NoResultException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
+import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 import static com.bskrobich.promocodesmanager.mapper.PromoCodeMapper.entityToDto;
@@ -18,15 +21,17 @@ import static com.bskrobich.promocodesmanager.mapper.PromoCodeMapper.entityToDto
 public class PromoCodeServiceImpl implements PromoCodeService {
 
     private final PromoCodeRepository repository;
+    private final PromoCodeValidator validator;
 
     @Override
-    public PromoCodeDto createPromoCode(PromoCodeDto promoCodeDto) {
+    public PromoCodeResponseDto createPromoCode(PromoCodeRequestDto promoCodeDto) {
+        validator.isValidPromoCode(promoCodeDto);
         PromoCode promoCode = PromoCodeMapper.dtoToEntity(promoCodeDto);
         return entityToDto(repository.save(promoCode));
     }
 
     @Override
-    public List<PromoCodeDto> getAllPromoCodes() {
+    public List<PromoCodeResponseDto> getAllPromoCodes() {
         List<PromoCode> promoCodes = repository.findAll();
         return promoCodes.stream()
                 .map(PromoCodeMapper::entityToDto)
@@ -34,8 +39,9 @@ public class PromoCodeServiceImpl implements PromoCodeService {
     }
 
     @Override
-    public Optional<PromoCodeDto> getPromoCodeByCode(String code) {
-        Optional<PromoCode> promoCode = repository.findById(code);
-        return promoCode.map(PromoCodeMapper::entityToDto);
+    public PromoCodeResponseDto getPromoCodeByCode(String code) {
+        return repository.findById(code)
+                .map(PromoCodeMapper::entityToDto)
+                .orElseThrow(NoSuchElementException::new);
     }
 }
