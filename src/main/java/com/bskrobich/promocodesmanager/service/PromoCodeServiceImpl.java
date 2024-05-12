@@ -45,6 +45,6 @@ public class PromoCodeServiceImpl implements PromoCodeService {
     public PromoCodeResponseDto getPromoCodeByCode(String code) {
         return repository.findById(code)
                 .map(PromoCodeMapper::entityToDto)
-                .orElseThrow(NoSuchElementException::new);
+                .orElseThrow(() -> new NoSuchElementException("Promo code not found"));
     }
 }

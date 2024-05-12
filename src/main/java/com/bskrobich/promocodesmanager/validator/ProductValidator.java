@@ -29,7 +29,7 @@ public class ProductValidator {
 
     public void validateProductExists(Long id) {
         if (!repository.existsById(id)) {
-            throw new NoSuchElementException();
+            throw new NoSuchElementException("Product with Id %s does not exist".formatted(id));
         }
     }
 }

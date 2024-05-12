@@ -13,10 +13,9 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ProductDto {
+public class DiscountDto {
+    private BigDecimal discountPrice;
+    private String promoCode;
     private Long productId;
-    private String name;
-    private String description;
-    private BigDecimal regularPrice;
-    private String currency;
+    private String warning;
 }
