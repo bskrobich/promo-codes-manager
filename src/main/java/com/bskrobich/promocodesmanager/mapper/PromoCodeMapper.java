@@ -27,4 +27,8 @@ public class PromoCodeMapper {
                 .numberOfUsages(0)
                 .build();
     }
+
+    public static void updateNumberOfUsages(PromoCode promoCode) {
+        promoCode.setNumberOfUsages(promoCode.getNumberOfUsages() + 1);
+    }
 }

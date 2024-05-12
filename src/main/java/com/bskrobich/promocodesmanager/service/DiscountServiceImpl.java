@@ -58,7 +58,7 @@ public class DiscountServiceImpl implements DiscountService {
             return discountDto;
         }
 
-        if (promoCode.getNumberOfUsages() == promoCode.getMaxUsages()) {
+        if (promoCode.getNumberOfUsages() >= promoCode.getMaxUsages()) {
             discountDto.setDiscountPrice(product.getRegularPrice());
             discountDto.setWarning("Promo code exceeded max usages");
             return discountDto;

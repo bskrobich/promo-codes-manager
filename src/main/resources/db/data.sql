@@ -4,7 +4,7 @@ INSERT INTO product (name, description, regular_price, currency) VALUES
 ('Headphones', NULL, 199.99, 'PLN');
 
 INSERT INTO promo_code (code, expiration_date, discount_amount, currency, max_usages, number_of_usages) VALUES
-('2E7bs56PYsSAne3GYr', '2024-06-30', 25.00, 'EUR', 100, 50),
+('2E7bs56PYsSAne3GYr', '2024-06-30', 25.00, 'EUR', 75, 50),
 ('kY1R5UU74', '2024-08-31', 20.00, 'USD', 200, 150),
 ('vSQ2Tw', '2024-10-31', 15.00, 'PLN', 150, 100);
 

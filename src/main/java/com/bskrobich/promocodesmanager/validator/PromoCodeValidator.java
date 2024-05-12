@@ -31,8 +31,8 @@ public class PromoCodeValidator {
             throw new IllegalArgumentException("Expiration date cannot be from past");
         }
 
-        if (promoCode.getDiscountAmount().compareTo(ZERO) < 0) {
-            throw new IllegalArgumentException("Discount amount cannot be negative");
+        if (promoCode.getDiscountAmount().compareTo(ZERO) <= 0) {
+            throw new IllegalArgumentException("Discount amount cannot be negative or 0");
         }
 
         if (promoCode.getMaxUsages() < 1) {

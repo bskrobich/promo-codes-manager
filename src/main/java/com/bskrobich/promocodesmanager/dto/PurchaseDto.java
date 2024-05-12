@@ -1,5 +1,6 @@
 package com.bskrobich.promocodesmanager.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,6 +13,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class PurchaseDto {
     private Long purchaseId;
     private LocalDate dateOfPurchase;

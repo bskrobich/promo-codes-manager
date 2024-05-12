@@ -10,7 +10,7 @@ CREATE TABLE product (
 CREATE TABLE promo_code (
     code varchar(24)  NOT NULL,
     expiration_date date  NOT NULL,
-    discount_amount decimal(9,2)  NOT NULL,
+    discount_amount decimal(9,2) NOT NULL,
     currency varchar(3)  NOT NULL,
     max_usages int  NOT NULL,
     number_of_usages int  NULL,
@@ -21,7 +21,7 @@ CREATE TABLE purchase (
     purchase_id bigint auto_increment NOT NULL,
     date_of_purchase date  NOT NULL,
     regular_price decimal(9,2)  NOT NULL,
-    amount_of_discount decimal(9,2)  NOT NULL,
+    amount_of_discount decimal(9,2)  NULL,
     promo_code_id varchar(24)  NOT NULL,
     product_id int  NOT NULL,
     CONSTRAINT purchase_pk PRIMARY KEY (purchase_id)
