@@ -17,7 +17,6 @@ public class ProductMapper {
 
     public static Product dtoToEntity(ProductDto productDto) {
         return Product.builder()
-                .productId(productDto.getProductId())
                 .name(productDto.getName())
                 .description(productDto.getDescription())
                 .regularPrice(productDto.getRegularPrice())

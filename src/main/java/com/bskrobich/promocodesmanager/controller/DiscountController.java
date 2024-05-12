@@ -14,7 +14,11 @@ public class DiscountController {
     private final DiscountService discountService;
 
     @GetMapping
-    public ResponseEntity<DiscountDto> getDiscount(@RequestParam(value = "productId") Long productId, @RequestParam(value = "promoCode", required = false) String promoCode) {
+    public ResponseEntity<DiscountDto> getDiscount(
+            @RequestParam(value = "productId") Long productId,
+            @RequestParam(value = "promoCode", required = false) String promoCode
+    )
+    {
         return ResponseEntity.ok(discountService.getDiscount(productId, promoCode));
     }
 }

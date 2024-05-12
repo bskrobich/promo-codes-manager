@@ -1,7 +1,12 @@
 package com.bskrobich.promocodesmanager.mapper;
 
-import com.bskrobich.promocodesmanager.dto.PurchaseDto;
+import com.bskrobich.promocodesmanager.dto.*;
+import com.bskrobich.promocodesmanager.model.Product;
+import com.bskrobich.promocodesmanager.model.PromoCode;
 import com.bskrobich.promocodesmanager.model.Purchase;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
 
 public class PurchaseMapper {
 
@@ -16,12 +21,11 @@ public class PurchaseMapper {
                 .build();
     }
 
-    public static Purchase dtoToEntity(PurchaseDto dto) {
+    public static Purchase dtoToEntity(PurchaseRequestDto dto, BigDecimal regularPrice, BigDecimal amountOfDiscount) {
         return Purchase.builder()
-                .purchaseId(dto.getPurchaseId())
-                .dateOfPurchase(dto.getDateOfPurchase())
-                .regularPrice(dto.getRegularPrice())
-                .amountOfDiscount(dto.getAmountOfDiscount())
+                .dateOfPurchase(LocalDate.now())
+                .regularPrice(regularPrice)
+                .amountOfDiscount(amountOfDiscount)
                 .promoCodeId(dto.getPromoCodeId())
                 .productId(dto.getProductId())
                 .build();
