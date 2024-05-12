@@ -3,6 +3,7 @@ package com.bskrobich.promocodesmanager.Service;
 import com.bskrobich.promocodesmanager.DTO.PromoCodeDto;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface PromoCodeService {
 
@@ -10,6 +11,6 @@ public interface PromoCodeService {
 
     List<PromoCodeDto> getAllPromoCodes();
 
-    PromoCodeDto getPromoCodeByCode(String code);
+    Optional<PromoCodeDto> getPromoCodeByCode(String code);
 
 }
