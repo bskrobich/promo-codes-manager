@@ -18,5 +18,5 @@ public class PurchaseDto {
     private BigDecimal regularPrice;
     private BigDecimal amountOfDiscount;
     private String promoCodeId;
-    private int productId;
+    private Long productId;
 }

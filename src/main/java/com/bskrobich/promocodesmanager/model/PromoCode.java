@@ -38,11 +38,11 @@ public class PromoCode {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         PromoCode promoCode = (PromoCode) o;
-        return maxUsages == promoCode.maxUsages && numberOfUsages == promoCode.numberOfUsages && Objects.equals(code, promoCode.code) && Objects.equals(expirationDate, promoCode.expirationDate) && Objects.equals(discountAmount, promoCode.discountAmount) && Objects.equals(currency, promoCode.currency);
+        return Objects.equals(code, promoCode.code);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(code, expirationDate, discountAmount, currency, maxUsages, numberOfUsages);
+        return Objects.hash(code);
     }
 }
