@@ -10,6 +10,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static com.bskrobich.promocodesmanager.Mapper.ProductMapper.dtoToEntity;
+import static com.bskrobich.promocodesmanager.Mapper.ProductMapper.entityToDto;
+
 @Service
 @RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {
@@ -18,17 +21,21 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductDto createProduct(ProductDto productDto) {
-        return null;
+        Product product = dtoToEntity(productDto);
+        return entityToDto(repository.save(product));
     }
 
     @Override
     public List<ProductDto> getAllProducts() {
         List<Product> products = repository.findAll();
-        return products.stream().map(ProductMapper::entityToDto).collect(Collectors.toList());
+        return products.stream()
+                .map(ProductMapper::entityToDto)
+                .collect(Collectors.toList());
     }
 
     @Override
     public ProductDto updateProduct(ProductDto productDto) {
-        return null;
+        Product product = dtoToEntity(productDto);
+        return entityToDto(repository.save(product));
     }
 }
