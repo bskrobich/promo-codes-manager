@@ -1,8 +1,6 @@
 package com.bskrobich.promocodesmanager.controller;
 
-import com.bskrobich.promocodesmanager.dto.DiscountDto;
 import com.bskrobich.promocodesmanager.dto.PurchaseDto;
-import com.bskrobich.promocodesmanager.service.DiscountService;
 import com.bskrobich.promocodesmanager.service.PurchaseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

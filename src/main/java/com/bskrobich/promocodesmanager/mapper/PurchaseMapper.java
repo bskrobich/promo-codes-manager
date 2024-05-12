@@ -1,8 +1,6 @@
 package com.bskrobich.promocodesmanager.mapper;
 
 import com.bskrobich.promocodesmanager.dto.*;
-import com.bskrobich.promocodesmanager.model.Product;
-import com.bskrobich.promocodesmanager.model.PromoCode;
 import com.bskrobich.promocodesmanager.model.Purchase;
 
 import java.math.BigDecimal;

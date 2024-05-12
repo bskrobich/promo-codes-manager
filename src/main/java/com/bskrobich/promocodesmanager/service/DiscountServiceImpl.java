@@ -1,10 +1,6 @@
 package com.bskrobich.promocodesmanager.service;
 
 import com.bskrobich.promocodesmanager.dto.DiscountDto;
-import com.bskrobich.promocodesmanager.dto.ProductDto;
-import com.bskrobich.promocodesmanager.dto.PromoCodeResponseDto;
-import com.bskrobich.promocodesmanager.mapper.ProductMapper;
-import com.bskrobich.promocodesmanager.mapper.PromoCodeMapper;
 import com.bskrobich.promocodesmanager.model.Product;
 import com.bskrobich.promocodesmanager.model.PromoCode;
 import com.bskrobich.promocodesmanager.repository.ProductRepository;

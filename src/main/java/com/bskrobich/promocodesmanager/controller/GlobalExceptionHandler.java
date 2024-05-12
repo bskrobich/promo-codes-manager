@@ -1,7 +1,6 @@
 package com.bskrobich.promocodesmanager.controller;
 
 import com.bskrobich.promocodesmanager.dto.ErrorResponseDto;
-import org.hibernate.annotations.NotFound;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

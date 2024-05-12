@@ -4,7 +4,6 @@ import com.bskrobich.promocodesmanager.dto.PromoCodeRequestDto;
 import com.bskrobich.promocodesmanager.dto.PromoCodeResponseDto;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface PromoCodeService {
 
