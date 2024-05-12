@@ -1,6 +1,7 @@
 package com.bskrobich.promocodesmanager.controller;
 
 import com.bskrobich.promocodesmanager.dto.ErrorResponseDto;
+import org.hibernate.annotations.NotFound;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -25,7 +26,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(NoSuchElementException.class)
-    public ResponseEntity<Void> handleNoSuchElementException() {
-        return ResponseEntity.notFound().build();
+    public ResponseEntity<String> handleNoSuchElementException(Exception e) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
     }
 }
