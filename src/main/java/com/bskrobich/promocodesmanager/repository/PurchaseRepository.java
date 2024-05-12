@@ -1,6 +1,6 @@
-package com.bskrobich.promocodesmanager.Repository;
+package com.bskrobich.promocodesmanager.repository;
 
-import com.bskrobich.promocodesmanager.Model.Purchase;
+import com.bskrobich.promocodesmanager.model.Purchase;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

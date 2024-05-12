@@ -1,9 +1,9 @@
-package com.bskrobich.promocodesmanager.Service;
+package com.bskrobich.promocodesmanager.service;
 
-import com.bskrobich.promocodesmanager.DTO.PromoCodeDto;
-import com.bskrobich.promocodesmanager.Mapper.PromoCodeMapper;
-import com.bskrobich.promocodesmanager.Model.PromoCode;
-import com.bskrobich.promocodesmanager.Repository.PromoCodeRepository;
+import com.bskrobich.promocodesmanager.dto.PromoCodeDto;
+import com.bskrobich.promocodesmanager.mapper.PromoCodeMapper;
+import com.bskrobich.promocodesmanager.model.PromoCode;
+import com.bskrobich.promocodesmanager.repository.PromoCodeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import static com.bskrobich.promocodesmanager.Mapper.PromoCodeMapper.entityToDto;
+import static com.bskrobich.promocodesmanager.mapper.PromoCodeMapper.entityToDto;
 
 @Service
 @RequiredArgsConstructor

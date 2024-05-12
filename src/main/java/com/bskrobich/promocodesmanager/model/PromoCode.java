@@ -1,4 +1,4 @@
-package com.bskrobich.promocodesmanager.Model;
+package com.bskrobich.promocodesmanager.model;
 
 import jakarta.persistence.*;
 import lombok.*;

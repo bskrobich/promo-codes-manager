@@ -1,7 +1,7 @@
-package com.bskrobich.promocodesmanager.Mapper;
+package com.bskrobich.promocodesmanager.mapper;
 
-import com.bskrobich.promocodesmanager.DTO.PurchaseDto;
-import com.bskrobich.promocodesmanager.Model.Purchase;
+import com.bskrobich.promocodesmanager.dto.PurchaseDto;
+import com.bskrobich.promocodesmanager.model.Purchase;
 
 public class PurchaseMapper {
 

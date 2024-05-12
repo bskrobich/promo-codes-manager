@@ -1,6 +1,6 @@
-package com.bskrobich.promocodesmanager.Service;
+package com.bskrobich.promocodesmanager.service;
 
-import com.bskrobich.promocodesmanager.DTO.PromoCodeDto;
+import com.bskrobich.promocodesmanager.dto.PromoCodeDto;
 
 import java.util.List;
 import java.util.Optional;
