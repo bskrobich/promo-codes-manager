@@ -15,7 +15,7 @@ import java.util.Objects;
 public class Product {
     @Id
     @Column
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long productId;
 
     @Column
@@ -35,11 +35,11 @@ public class Product {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return Objects.equals(productId, product.productId) && Objects.equals(name, product.name) && Objects.equals(description, product.description) && Objects.equals(regularPrice, product.regularPrice) && Objects.equals(currency, product.currency);
+        return Objects.equals(productId, product.productId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(productId, name, description, regularPrice, currency);
+        return Objects.hash(productId);
     }
 }

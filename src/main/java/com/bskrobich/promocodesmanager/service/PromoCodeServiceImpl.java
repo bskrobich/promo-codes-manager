@@ -6,9 +6,9 @@ import com.bskrobich.promocodesmanager.mapper.PromoCodeMapper;
 import com.bskrobich.promocodesmanager.model.PromoCode;
 import com.bskrobich.promocodesmanager.repository.PromoCodeRepository;
 import com.bskrobich.promocodesmanager.validator.PromoCodeValidator;
-import jakarta.persistence.NoResultException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -24,6 +24,7 @@ public class PromoCodeServiceImpl implements PromoCodeService {
     private final PromoCodeValidator validator;
 
     @Override
+    @Transactional
     public PromoCodeResponseDto createPromoCode(PromoCodeRequestDto promoCodeDto) {
         validator.isValidPromoCode(promoCodeDto);
         PromoCode promoCode = PromoCodeMapper.dtoToEntity(promoCodeDto);
@@ -31,6 +32,7 @@ public class PromoCodeServiceImpl implements PromoCodeService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<PromoCodeResponseDto> getAllPromoCodes() {
         List<PromoCode> promoCodes = repository.findAll();
         return promoCodes.stream()
@@ -39,6 +41,7 @@ public class PromoCodeServiceImpl implements PromoCodeService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public PromoCodeResponseDto getPromoCodeByCode(String code) {
         return repository.findById(code)
                 .map(PromoCodeMapper::entityToDto)

@@ -32,18 +32,18 @@ public class Purchase {
     private String promoCodeId;
 
     @Column
-    private int productId;
+    private Long productId;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Purchase purchase = (Purchase) o;
-        return productId == purchase.productId && Objects.equals(purchaseId, purchase.purchaseId) && Objects.equals(dateOfPurchase, purchase.dateOfPurchase) && Objects.equals(regularPrice, purchase.regularPrice) && Objects.equals(amountOfDiscount, purchase.amountOfDiscount) && Objects.equals(promoCodeId, purchase.promoCodeId);
+        return Objects.equals(purchaseId, purchase.purchaseId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(purchaseId, dateOfPurchase, regularPrice, amountOfDiscount, promoCodeId, productId);
+        return Objects.hash(purchaseId);
     }
 }
