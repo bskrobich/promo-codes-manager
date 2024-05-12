@@ -1,4 +1,4 @@
-package com.bskrobich.promocodesmanager.DTO;
+package com.bskrobich.promocodesmanager.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class PromoCodeDto {
+public class PromoCodeResponseDto {
     private String code;
     private LocalDate expirationDate;
     private BigDecimal discountAmount;

@@ -1,4 +1,4 @@
-package com.bskrobich.promocodesmanager.DTO;
+package com.bskrobich.promocodesmanager.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
