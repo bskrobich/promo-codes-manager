@@ -43,11 +43,13 @@
     </dependencies>
 
     <build>
+        <finalName>promo-codes-manager</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
+                    <mainClass>com.bskrobich.promocodesmanager.PromoCodesManagerApplication</mainClass>
                     <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>
