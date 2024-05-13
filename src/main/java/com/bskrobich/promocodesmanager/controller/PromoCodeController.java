@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/promoCodes")
+@RequestMapping("/promo-codes")
 @RequiredArgsConstructor
 public class PromoCodeController {
 
@@ -26,9 +26,9 @@ public class PromoCodeController {
         return ResponseEntity.ok(service.getAllPromoCodes());
     }
 
-    @GetMapping("/{code}")
-    public ResponseEntity<PromoCodeResponseDto> getPromoCodeByCode(@PathVariable String code) {
-        return ResponseEntity.ok(service.getPromoCodeByCode(code));
+    @GetMapping("/{promoCode}")
+    public ResponseEntity<PromoCodeResponseDto> getPromoCodeByCode(@PathVariable String promoCode) {
+        return ResponseEntity.ok(service.getPromoCodeByCode(promoCode));
 
     }
 
