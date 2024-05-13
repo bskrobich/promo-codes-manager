@@ -26,7 +26,7 @@ This application provides a backend solution for managing promo codes for sales 
 - **Database**: Utilizes a relational in-memory database (e.g., H2).
 - **API**: Exposes a RESTful API for interacting with the application.
 - **Security**: No authentication or authorization mechanisms are implemented.
-- **Build Tool**: Utilizes either Maven or Gradle for project management.
+- **Build Tool**: Utilizes Maven for project management.
 
 ## Instructions
 
